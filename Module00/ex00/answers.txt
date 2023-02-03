@@ -1,0 +1,5 @@
+Output a list of installed packages and their versions--> pip list
+Show the package metadata of numpy--> pip show numpy
+Remove the package numpy --> pip uninstall numpy
+(Re)install the package numpy--> pip install numpy
+Freeze your python packages and their versions in a requirements.txt file you have to turn-in --> pip freeze > requirements.txt
