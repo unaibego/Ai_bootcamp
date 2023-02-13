@@ -1,4 +1,5 @@
 from datetime import date
+from recipe import Recipe
 class Book:
     recipes_list = {"starter":[], "lunch":[], "dessert":[]}
     def __init__(self, name):
@@ -16,7 +17,12 @@ class Book:
                     return 0
         print("There are no recipes with that name")
     def add_recipe(self, recipe):
-            self.recipes_list[recipe.recipe_type].append(recipe)
+            if isinstance(recipe, Recipe):
+                 print("This recipe doesn't exist")
+            else:
+                print(recipe.recipe_name)
+                self.recipes_list[recipe.recipe_type].append(recipe)
+                self.last_update = date.today()
 
 
 

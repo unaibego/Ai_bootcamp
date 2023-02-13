@@ -7,6 +7,7 @@ def ft_filter(n, s):
     for caracter in [",", ".", ":", ";", "!", "?", "¿"]:
         s = s.replace(caracter, "")
     string = s.split(" ")
+    print(string)
     string_removed = s.split(" ")
     for word in string:
         if len(word) <= int(n):
@@ -19,5 +20,3 @@ if __name__ == "__main__":
         print("1.Error")
     else:
         ft_filter(sys.argv[2], sys.argv[1])
-
-

@@ -3,17 +3,55 @@ class Vector:
     def __add__(self, add_vector):
         index = 0
         new_vector = []
+        if len(self.vector) > 1:
+            for i in self.vector:
+                new_vector.append([self.vector[index][0] + add_vector.vector[index][0]]) 
+                index += 1
+            return (new_vector)
+        else:
+            for i in self.vector[0]:
+                new_vector.append(self.vector[0][index] + add_vector.vector[0][index]) 
+                index += 1
+            return ([new_vector])
+    def __sub__(self, add_vector):
+        index = 0
+        new_vector = []
         if len(self.vector) > 1: 
             for i in self.vector:
-                new_vector.append([self.vector[index] + add_vector.vector[index]]) 
+                new_vector.append([self.vector[index][0] - add_vector.vector[index][0]]) 
+                index += 1
+            return (new_vector)
+        else:
+            for i in self.vector[0]:
+                new_vector.append(self.vector[0][index] - add_vector.vector[0][index]) 
                 index += 1
             return ([new_vector])
-        else: 
+    def __truediv__(self, zatiki):
+        index = 0
+        new_vector = []
+        if len(self.vector) > 1: 
             for i in self.vector:
-                new_vector.append(self.vector[index][0] + add_vector.vector[index][0]) 
+                new_vector.append(self.vector[index][0] / zatiki) 
+                index += 1
+            return (new_vector)
+        else:
+            for i in self.vector[0]:
+                new_vector.append(self.vector[0][index] / zatiki) 
                 index += 1
             return ([new_vector])
-
+    def __mul__(self, biderkatzale):
+        index = 0
+        new_vector = []
+        if len(self.vector) > 1: 
+            for i in self.vector:
+                new_vector.append(self.vector[index][0] * biderkatzale) 
+                index += 1
+            return (new_vector)
+        else:
+            for i in self.vector[0]:
+                new_vector.append(self.vector[0][index] * biderkatzale) 
+                index += 1
+            return ([new_vector])
     def __init__(self, vector):
         self.vector = vector
     def __str__(self):
@@ -54,9 +92,16 @@ def transpose(vector):
 
 v1 = Vector([[1], [2], [4]])
 v2 = Vector([[4], [5], [7]])
-v3 = v1 + v2
+v4 = Vector([[1, 2, 4]])
+v5 = Vector([[4, 5, 7]])
+v3 = v5+v4
+print(v3)
+v3 = v1 - v2
 print(v3)
 print(v1.dot([[1], [1], [1]]))
 print(v1.shape())
-print(v1.T())
+v3 = v1 / 2
+print(v3)
+v3 = v1 * 2
+print(v3)
 print(v1.T())
