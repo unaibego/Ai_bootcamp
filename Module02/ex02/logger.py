@@ -7,14 +7,19 @@ def log(function):
     def loggin(self, *args):
         start = time.time() * 1000
         if args:
-            print(function(self, args[0]))
+            value = function(self, args[0])
         else:
-            print(function(self))
+            value = function(self)
         end = time.time() * 1000
         f = open("machine.log", "a")
-        f.write(f"(cmaxime)Running: {function.__name__} [ exec-time = { end - start} ms ]\n")
+        string = f"(cmaxime)Running: {function.__name__}"
+       
+        if function.__name__ == "add_water":
+                f.write(f"{ string + (32 - len(string))*' '}[ exec-time = { round((end - start) / 1000, 3)} s ]\n")
+        else:
+            f.write(f"{ string + (32 - len(string))*' '}[ exec-time = { round(end - start, 3)} ms ]\n")
         f.close()
-        # print(end - start)
+        return value
     return loggin
 
 
@@ -49,5 +54,5 @@ if __name__ == "__main__":
     machine = CoffeeMachine()
     for i in range(0, 5):
         machine.make_coffee()
-        machine.make_coffee()
-        machine.add_water(70)
+    machine.make_coffee()
+    machine.add_water(70)
