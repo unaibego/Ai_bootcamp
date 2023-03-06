@@ -49,6 +49,6 @@ class CsvReader():
 if __name__ == "__main__":
     with CsvReader('good.csv', ) as file:
         data = file.getdata()
-        print(data)
+        new_data = data[0].split("\n")
+        print(new_data)
         header = file.getheader()
-        print(header)
