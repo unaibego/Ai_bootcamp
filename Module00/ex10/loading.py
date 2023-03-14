@@ -9,7 +9,10 @@ import time
 
 listy = range(1000)
 ret = 0
-for elem in tqdm(listy):
+count = 0
+for elem in listy:
+    print("|" * count)
+    count += 1
     ret += (elem + 3) % 5
     time.sleep(0.01)
 print()

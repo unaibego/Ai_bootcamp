@@ -126,7 +126,7 @@ class Bank(object):
 								
 	# ... Your code ...
 
-cuenta1 = Account("Unai", value = 400000)
+cuenta1 = Account("Unai", value = 400000, value2=30)
 cuenta2 = Account("Andoni")
 BBk = Bank()
 BBk.add(cuenta1)

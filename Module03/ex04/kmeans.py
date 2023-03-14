@@ -80,8 +80,8 @@ class KmeansClustering:
 def distance(p1, p2):
     return ((((p1[0]-p2[0])**2)+((p1[1]-p2[1])**2)+((p1[2]-p2[2])**2))**0.5)
 
-X = [[random.randint(0,10),random.randint(0,10),random.randint(0,10)] for i in range(30)]
-Kmean = KmeansClustering()
+X = [[random.randint(0,10),random.randint(0,10),random.randint(0,10)] for i in range(100)]
+Kmean = KmeansClustering(20, 5)
 Kmean.fit(X)
 
 # if __name__ == "__main__":
