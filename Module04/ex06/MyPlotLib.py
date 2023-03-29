@@ -1,5 +1,6 @@
 import sys
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 sys.path.insert(0, "..")
 
@@ -17,11 +18,17 @@ class MyPlotLib():
         data[features[1]].hist(ax=axes[1])
         plt.show()
     def density(self, data, features):
-        pass
+        data[features[0]].plot.density()
+        data[features[1]].plot.density()
+        plt.legend(labels=features)
+        plt.show()
     def pair_plot(self, data, features):
-        pass
-    def box_plot(data, features):
-        pass
+        sns.pairplot(data[features], diag_kws = {'alpha':0.55, 'bins':15})
+        plt.show()
+    def box_plot(self, data, features):
+        data[features].plot(kind='box')
+        # data[features].plot(kind='box')
+        plt.show()
 
 plotter = MyPlotLib()
-plotter.histogram(df, ["Height", "Weight"])
+plotter.box_plot(df, ["Height", "Weight"])
