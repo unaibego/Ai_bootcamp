@@ -1,5 +1,5 @@
 survived,sex,age,n_siblings_spouses,parch,fare,class,deck,embark_town,alone
-0,male,35.0,0,0,8.05,Third,unknown,Southampton,y
+1,female,22.0,1,0,53.0,First,D,Southampton,n
 0,male,54.0,0,0,51.8625,First,E,Southampton,y
 1,female,58.0,0,0,26.55,First,C,Southampton,y
 1,female,55.0,0,0,16.0,Second,unknown,Southampton,y
