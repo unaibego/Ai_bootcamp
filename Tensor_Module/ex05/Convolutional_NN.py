@@ -51,6 +51,10 @@ model.compile(optimizer="adam",
 history = model.fit(train_images, train_labels, epochs=4, validation_data=(test_images, test_labels))
 print(history)
 
+"""
+Aurreko ariketako funtzio berdinak erabiliko ditugu gure emaitzak aztertzeko
+"""
+
 def get_num():
     num = input("Select which imagen do you want to predict: ")
     while not num.isnumeric():
@@ -72,3 +76,6 @@ while 1:
     prediction = predict( img_array, model)
     print(prediction)
     plot_imagen(prediction, class_names,img_array)
+
+
+
